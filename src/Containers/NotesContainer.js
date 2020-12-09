@@ -6,11 +6,17 @@ class NotesContainer extends React.Component {
         return [{ id: 1, content: "First Note" }, { id: 2, content: "Second Note" }, { id: 3, content: "Third Note" }, { id: 4, content: "Fourth Note" }]
     }
 
+    notes = () => {
+    return this.apiResponse().map(note => <Note note={note}/>)
+    }
+
     render() {
         return (
-            <ul>
-                {}
-            </ul>
+            <div>
+                <ul>
+                    {this.notes()}
+                </ul>
+            </div>
         )
     }
 
